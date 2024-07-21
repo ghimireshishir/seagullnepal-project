@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Agency</title>
+</head>
+<body>
+    <h1>Travel Packages</h1>
+    <ul>
+        {% for package in packages %}
+        <li>
+            <a href="{% url 'package_detail' package.id %}">{{ package.name }}</a>
+            - ${{ package.price }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
